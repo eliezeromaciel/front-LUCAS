@@ -10,8 +10,10 @@ while (i<10) {
 // objetivo: imprimir o maior número do array
 let arrayDeNumeros = [11, 15, 18, 14, 12, 13]
 let maior = 0
+let menor = 500;
+
 for ( i = 0 ; i < arrayDeNumeros.length ; i ++){
-  // let proximo = arrayDeNumeros[i + 1]     // PROFESSOR : eu estava inserindo i++ , o que fazia pular um índice, ...
+  // let proximo = arrayDeNumeros[i + 1]      // PROFESSOR : eu estava inserindo i++ , o que fazia pular um índice, ...
   if (arrayDeNumeros[i] > maior)  {
     maior = arrayDeNumeros[i]
   }  
