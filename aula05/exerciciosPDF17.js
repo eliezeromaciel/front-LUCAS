@@ -109,6 +109,21 @@ const buscaPersonagem = (name) => {
 }
 buscaPersonagem('Hyoga')
 
+//b)prof
+const buscaPersonageProf = (name) => {
+  for ( let i = 0; i < personagensCavaleirosZoodiaco[i].length; i++) {  
+    if(personagensCavaleirosZoodiaco[i].nome !== name){
+      console.log('Personagem não encontrado na lista')
+      return;
+    }
+    else{
+      return   console.log('personagem encontrado')
+    }
+  }
+  
+}
+buscaPersonagem('Hyoga')
+
 // c)
 const listaPersonagems = () => {
   return (console.log(JSON.stringify(personagensCavaleirosZoodiaco)))
