@@ -83,6 +83,8 @@ const posicionaNavio = (linha, coluna) => {
   batalhaNaval[linha][coluna] = 1
 }
 
+
+
 posicionaNavio(0,0)
 posicionaNavio(1,0)
 posicionaNavio(2,0)
@@ -108,7 +110,7 @@ const acertaNavio = (linha, coluna) => {
   }
   if (batalhaNaval[linha][coluna] == '-') {
     console.log('Vc já havia escolhido esta posição anteriormente')
-  }  
+  }  //lembrar do else
 }
 acertaNavio(5,3)
 // imprime batalha naval atualizado
@@ -117,6 +119,9 @@ for (let i =0; i < batalhaNaval.length; i++) {
 }
 
 const acertaTodosNavios = () => { 
+  
+}
+while(quantNavios.length>=0){
   
 }
 

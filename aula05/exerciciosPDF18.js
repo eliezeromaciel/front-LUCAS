@@ -27,10 +27,22 @@ function minhaFuncao (objeto, propriedade) {
 const pessoa= {
   nome: 'joao',
   idade: 23,
-  beckender: false
+  beckender: false //backender
 }
 console.log(minhaFuncao(pessoa, 'backender'))
 console.log(minhaFuncao(pessoa, 'altura'))
+
+// --------------------------revisao prof ----------------------///
+function minhaFuncaoProf (objeto, propriedade) {
+  return objeto[propriedade]
+}
+const pessoaProf= {
+  nome: 'joao',
+  idade: 23,
+  backender: false //backender
+}
+console.log(minhaFuncaoProf(pessoaProf, 'backender'))
+console.log(minhaFuncaoProf(pessoaProf, 'altura'))
 
 
 
@@ -114,6 +126,7 @@ compra(fruta3)
 
 console.log ('DESAFIO 3 ------------------------------------------------------------------------------------------------')
 const controleEstoqueFrutas = (fruta) => {
+  //fruta.disponibilidade = !fruta.disponibilidade resposta prof
   fruta.valor = 'valor foi invertido'
   return `${fruta.disponibilidade} + ${fruta.valor}`
 }

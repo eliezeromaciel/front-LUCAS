@@ -19,16 +19,12 @@ let mapaJogo = [
 
 
 console.log('exercício 2 de fixação ///////////////////////////////////////////////////////////////////////////////////////////')
-let pontuacoes = [
-  [3,1,9,5],
-  [23,9,0,2],
-  [6,13,1,7]
-]
+let pontuacoes = [  [3,1,9,5],  [23,9,0,2],  [6,13,1,7]];
 
 // TENTEI ME PUXAR E FAZER ALGO MAIS ELABORADO AQUI 
 const imprimeTotalPontos = (jogador) => {
   let soma = 0
-  for ( let i = 0; i < pontuacoes.length; i++) {     // POR QUE DESTA FORMA ABAIXO EU PRECISO QUE O LOOP CHEGUE NA IGUALDADE DE LENGTH, E NAO APENAS SER MENOR???       
+  for ( let i = 0; i <= pontuacoes.length; i++) {     // POR QUE DESTA FORMA ABAIXO EU PRECISO QUE O LOOP CHEGUE NA IGUALDADE DE LENGTH, E NAO APENAS SER MENOR???       
     soma += pontuacoes[jogador[1]][i]
   }
   console.log(`Jogador ${jogador[0]} obteve ${soma} pontos`)
