@@ -1,22 +1,14 @@
-console.log('exercício 1 interpretação ///////////////////////////////////////////////////////////////////////////////////////')
+'exercício 1 interpretação ///////////////////////////////////////////////////////////////////////////////////////'
 // será impresso o número 16.
 
-
-
-
-console.log('exercício 2 interpretação ///////////////////////////////////////////////////////////////////////////////////////')
+'exercício 2 interpretação ///////////////////////////////////////////////////////////////////////////////////////'
 // serão impressos apenas os números pares, pois na divisão por dois, nao pode haver resto, precisando ser igual a zero. 
 
-
-
-
-console.log('exercício 2 interpretação ///////////////////////////////////////////////////////////////////////////////////////')
+'exercício 2 interpretação ///////////////////////////////////////////////////////////////////////////////////////'
 // soma terá o valor da soma de todos os valores existentes na matriz, pois a cada item ele soma o valor do item da matriz ao valor da variável soma e atualiza a variável com o resultado dessa soma.
 
 
-
-
-console.log('exercício 1 de fixação ///////////////////////////////////////////////////////////////////////////////////////////')
+'exercício 1 de fixação ///////////////////////////////////////////////////////////////////////////////////////////'
 let mapaJogo = [
   [0,2,1,2,0],
   [0,2,1,2,0],
@@ -24,7 +16,6 @@ let mapaJogo = [
   [2,2,2,2,0],
   [0,0,0,0,0],
 ]
-
 
 
 console.log('exercício 2 de fixação ///////////////////////////////////////////////////////////////////////////////////////////')
@@ -56,11 +47,23 @@ console.log('exercício de fixação 3 /////////////////////////////////////////
 let matrix_4x4 = [ 
   [1,2,3,4],
   [5,6,7,8],
-  [9,10,11,12]
+  [9,10,11,12],
+  [13,14,15,16],
 ]
 const inverteMatrix = () => {
-  // nao fiz, pois vou me concentrar no JURRASSIC   
+  // fiz até um desenho pra poder pensar melhor. (tirei foto)
+  let novaMatrix = [...matrix_4x4]
+  for (let i=0 ; i < matrix_4x4.length; i++) {
+    for ( let l = 0; l < matrix_4x4.length; l++){
+      novaMatrix[i][l] = matrix_4x4.length - i - 1
+    }
+  }
+
+
+  let length = matrix_4x4.length  - 1
+  console.log(novaMatrix)
 }
+inverteMatrix()
 
 
 
@@ -84,7 +87,7 @@ const criaIlha = () => {
     for(let l = 0; l< 10; l++) {
       jurassicPark[i][l] = Math.floor(Math.random()*5)
     }
-    console.log(jurassicPark[i].join())
+    // console.log(jurassicPark[i].join())
   }
   console.log('---')
 }
