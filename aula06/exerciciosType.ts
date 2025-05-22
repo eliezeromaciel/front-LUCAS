@@ -1,2 +1,4 @@
-let pessoa: string = 'Marta Suplici'
+let pessoa: string = 'Marta     Suplici'
 console.log(pessoa)
+
+
