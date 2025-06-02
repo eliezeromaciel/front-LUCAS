@@ -25,9 +25,7 @@ class Mundo {
 }
 
 // ------------------// 
-// Crie uma classe Inventario que possa armazenar diferentes tipos de itens do Minecraft (blocos, ferramentas, etc.).
-// A classe deve ter métodos para adicionar, remover e  exibir os itens do inventário. Crie uma classe Jogador que tenha 
-// um objeto do tipo Inventario como atributo.
+
 
 class Inventario {
     private itens: Array<string>
@@ -67,20 +65,5 @@ console.log(inventarioJogadorLucas.mostrarItens())
 
 
 class Jogador {
-    private nome:string;
-    private idade:number;
-    private inventario: Inventario;
-
-    constructor(nomeConst:string, idadeCost:number){
-        this.nome = nomeConst;
-        this.idade = idadeCost;
-        this.inventario = new Inventario(new Array<string>)
-    }
-
-    setItemInventario(item:string):void{
-        this.inventario.adicionarItem(item);
-    }
+    inventario: {}
 }
-
-const jogador1 = new Jogador('Eli',31);
-jogador1.setItemInventario('Costura');

@@ -36,17 +36,25 @@ class ChapeuSeletor {
     private casa: number
     private nomeProf:string
 
+<<<<<<< HEAD
     constructor () {
         this.selecionar_SETAR_Casa();
         this.nomeProf='lucas';
+=======
+    constructor () {    // construtor pode já SETAR parametros, invocar funçoes da própria classe, etc.
+        this.selecionar_SETAR_Casa()
+>>>>>>> 30454c25e484644db254fed341cca9e687cbe82d
     }
 
     public pegarChapeuSeletor () {
-        // return {casa : this.casa}
         return this.casa
     }
 
+<<<<<<< HEAD
     private selecionar_SETAR_Casa () {
+=======
+    private selecionar_SETAR_Casa () : void {
+>>>>>>> 30454c25e484644db254fed341cca9e687cbe82d
         this.casa = Math.floor( Math.random()*4 + 1)
     }
 
@@ -57,11 +65,11 @@ class ChapeuSeletor {
 }
 
 const novoChapeuSeletor = new ChapeuSeletor()
+<<<<<<< HEAD
 //console.log(novoChapeuSeletor.selecionar_SETAR_Casa())
+=======
+>>>>>>> 30454c25e484644db254fed341cca9e687cbe82d
 console.log(novoChapeuSeletor.exibirCasa())
-
-// POR QUE DESSA FORMA ESTÁ SAINDO DUAS IMPRESSOES????? 
-// e se nao declaro o construtor (deixo como anotacao), sou obrigado a inserir algum argumento quando crio novo objeto?
 
 
 // --------------------------------- // 
