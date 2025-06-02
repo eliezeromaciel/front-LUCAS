@@ -25,9 +25,7 @@ class Mundo {
 }
 
 // ------------------// 
-// Crie uma classe Inventario que possa armazenar diferentes tipos de itens do Minecraft (blocos, ferramentas, etc.).
-// A classe deve ter métodos para adicionar, remover e  exibir os itens do inventário. Crie uma classe Jogador que tenha 
-// um objeto do tipo Inventario como atributo.
+
 
 class Inventario {
     private itens: Array<string>
@@ -58,14 +56,31 @@ class Inventario {
     }
 }
 
-const inventarioJogadorLucas = new Inventario (['bloco', 'picareta', 'espada', 'carne assada'])
-console.log(inventarioJogadorLucas.mostrarItens())
-inventarioJogadorLucas.adicionarItem('anel de fogo')
-console.log(inventarioJogadorLucas.mostrarItens())
-inventarioJogadorLucas.deletarItem('picareta')
-console.log(inventarioJogadorLucas.mostrarItens())
+const inventario1 = new Inventario (['bloco', 'picareta', 'espada', 'carne assada'])
+console.log(inventario1.mostrarItens())
+inventario1.adicionarItem('anel de fogo')
+console.log(inventario1.mostrarItens())
+inventario1.deletarItem('picareta')
+console.log(inventario1.mostrarItens())
 
 
-class Jogador {
-    inventario: {}
+class Player {
+    private nome: string
+    private idade: number
+    inventario: Inventario  
+
+    constructor (name: string, age: number, itensDoInventario ?: Array<string>) {       // AGORA CONSEGUI. precisei inserir um parametro, pois o tipo Inventario exige um array. e deixei ele opcional com o caractere "?""
+        this.nome = name
+        this.idade = age
+        // this.inventario = new Inventario(['sdf'])  // criar no construtor aqui para já criar pelo menos um inventário vazio. Porque até o momento não existe inventário algum.
+        this.inventario = new Inventario(itensDoInventario)
+    }
+
+    public mostrarJogador () : void {
+        console.log(`Jogador nome: ${this.nome}, idade ${this.idade} anos e inventário: ${this.inventario.pegarItens()}`)
+    }
+
 }
+
+const jogadorLucas = new Player ('Lucas SkyWalker', 30)
+jogadorLucas.mostrarJogador()
