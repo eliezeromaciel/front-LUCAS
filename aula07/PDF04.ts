@@ -67,5 +67,20 @@ console.log(inventarioJogadorLucas.mostrarItens())
 
 
 class Jogador {
-    inventario: {}
+    private nome:string;
+    private idade:number;
+    private inventario: Inventario;
+
+    constructor(nomeConst:string, idadeCost:number){
+        this.nome = nomeConst;
+        this.idade = idadeCost;
+        this.inventario = new Inventario(new Array<string>)
+    }
+
+    setItemInventario(item:string):void{
+        this.inventario.adicionarItem(item);
+    }
 }
+
+const jogador1 = new Jogador('Eli',31);
+jogador1.setItemInventario('Costura');

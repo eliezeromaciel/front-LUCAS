@@ -34,27 +34,30 @@ console.log(minhaVarinha.pegarVarinha());
 
 class ChapeuSeletor {
     private casa: number
+    private nomeProf:string
 
-    // constructor (house: number) {
-    //     this.casa = house
-    // }
+    constructor () {
+        this.selecionar_SETAR_Casa();
+        this.nomeProf='lucas';
+    }
 
     public pegarChapeuSeletor () {
         // return {casa : this.casa}
         return this.casa
     }
 
-    public selecionar_SETAR_Casa () {
+    private selecionar_SETAR_Casa () {
         this.casa = Math.floor( Math.random()*4 + 1)
     }
 
     public exibirCasa () {
         console.log(`A Casa escolhida aleatoriamente é a de número ==> ${this.casa}`)
     }
+
 }
 
 const novoChapeuSeletor = new ChapeuSeletor()
-console.log(novoChapeuSeletor.selecionar_SETAR_Casa())
+//console.log(novoChapeuSeletor.selecionar_SETAR_Casa())
 console.log(novoChapeuSeletor.exibirCasa())
 
 // POR QUE DESSA FORMA ESTÁ SAINDO DUAS IMPRESSOES????? 
@@ -93,6 +96,9 @@ class Feitico {
         console.log(`O feitiço chamado ${this.nome} do tipo ${this.tipo} e com poder ${this.poder} foi lançado!`)
     }
 }
+
+const feitico1 = new Feitico('alohomora', 'utilidade', 3);
+feitico1.setarFeitico('lumus', 'utilidade',3);
 
 
 
