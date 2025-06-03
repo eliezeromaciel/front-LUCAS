@@ -1,14 +1,15 @@
 class Animal {
-    classe: string  // mamíferos, aves, peixes, anfíbios e répteis. 
-    familia: string // hominidios, felidae
-    especie: string // homo sapiens, felis silvestris
+    //classe: string  // mamíferos, aves, peixes, anfíbios e répteis. 
+   // familia: string // hominidios, felidae
+especie: string // homo sapiens, felis silvestris
     alimentacao: string // herbívoros, carnívoros, onívoros
     sede: number
     cor: string
 
+    //construtor definindo um animal com classe, família, espécia, fome, sede e cor.
     constructor (classs: string, family: string, specie: string, food: string, thirst: number, color: string ) {
-        this.classe = classs
-        this.familia = family
+        //this.classe = classs
+        //this.familia = family
         this.especie = specie
         this.alimentacao = food
         this.sede = thirst
@@ -61,3 +62,50 @@ const serHumano = new Mamiferos ('Mamífero','Canidae','Canis lupus familiaris',
 
 console.log(serHumano.exibirCaracteristicas())
 console.log(serHumano.amamentar())
+
+
+export class Veiculo {
+    protected name : string;
+    private placa: number;
+    protected modelo : string;
+
+    constructor(nameConst:string, placaConst:number, modeloConst:string){
+        this.name = nameConst;
+        this.placa = placaConst;
+        this.modelo = modeloConst;
+    }
+
+    protected ligar():string{
+        return 'motor ligado';
+    };
+    protected desligar():string{
+        return 'motor desligado';
+    };
+
+}
+
+export class carro extends Veiculo {
+    constructor(nameCarro:string, placaCarro:number, modeloCarro:string){
+        super(nameCarro, placaCarro, modeloCarro)
+    }
+    acelerar():void{
+        console.log("O carro está: ", this.ligar());
+    };
+    desacelerar():void{
+        console.log("O carro está: ", this.desligar());
+    }
+}
+
+const veiculo1 = new Veiculo('chevete', 287347, 'tubarão');
+//veiculo1.ligar();
+
+const meuCarro = new carro('Pretão', 176343, 'Uno Mille' );
+meuCarro.acelerar();
+meuCarro.desacelerar();
+
+function interagir(animal1:Animal, animal2:Animal){
+
+}
+
+const gato = new Mamiferos();
+interagir(gato, cachorro);
