@@ -34,25 +34,41 @@ console.log(minhaVarinha.pegarVarinha());
 
 class ChapeuSeletor {
     private casa: number
+    private nomeProf:string
 
+<<<<<<< HEAD
+    constructor () {
+        this.selecionar_SETAR_Casa();
+        this.nomeProf='lucas';
+=======
     constructor () {    // construtor pode já SETAR parametros, invocar funçoes da própria classe, etc.
         this.selecionar_SETAR_Casa()
+>>>>>>> 30454c25e484644db254fed341cca9e687cbe82d
     }
 
     public pegarChapeuSeletor () {
         return this.casa
     }
 
+<<<<<<< HEAD
+    private selecionar_SETAR_Casa () {
+=======
     private selecionar_SETAR_Casa () : void {
+>>>>>>> 30454c25e484644db254fed341cca9e687cbe82d
         this.casa = Math.floor( Math.random()*4 + 1)
     }
 
     public exibirCasa () {
         console.log(`A Casa escolhida aleatoriamente é a de número ==> ${this.casa}`)
     }
+
 }
 
 const novoChapeuSeletor = new ChapeuSeletor()
+<<<<<<< HEAD
+//console.log(novoChapeuSeletor.selecionar_SETAR_Casa())
+=======
+>>>>>>> 30454c25e484644db254fed341cca9e687cbe82d
 console.log(novoChapeuSeletor.exibirCasa())
 
 
@@ -88,6 +104,9 @@ class Feitico {
         console.log(`O feitiço chamado ${this.nome} do tipo ${this.tipo} e com poder ${this.poder} foi lançado!`)
     }
 }
+
+const feitico1 = new Feitico('alohomora', 'utilidade', 3);
+feitico1.setarFeitico('lumus', 'utilidade',3);
 
 
 

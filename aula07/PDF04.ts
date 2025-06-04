@@ -56,6 +56,18 @@ class Inventario {
     }
 }
 
+const inventarioJogadorLucas = new Inventario (['bloco', 'picareta', 'espada', 'carne assada'])
+console.log(inventarioJogadorLucas.mostrarItens())
+inventarioJogadorLucas.adicionarItem('anel de fogo')
+console.log(inventarioJogadorLucas.mostrarItens())
+inventarioJogadorLucas.deletarItem('picareta')
+console.log(inventarioJogadorLucas.mostrarItens())
+
+
+class Jogador {
+    inventario: {}
+}
+
 const inventario1 = new Inventario (['bloco', 'picareta', 'espada', 'carne assada'])
 console.log(inventario1.mostrarItens())
 inventario1.adicionarItem('anel de fogo')
@@ -81,6 +93,7 @@ class Player {
     }
 
 }
+const inventario2 = ['sabre', 'pistola', 'bastão']
 
-const jogadorLucas = new Player ('Lucas SkyWalker', 30)
+const jogadorLucas = new Player ('Lucas SkyWalker', 30,  inventario2)
 jogadorLucas.mostrarJogador()
