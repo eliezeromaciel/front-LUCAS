@@ -79,14 +79,3 @@ frotaA.mostrarNumeroBicicletasDaFrota()
 
 
 
-// FUNCAO PARA CRIAR FROTAS E CONTAR TOTAL DE FROTAS // 
-
-let contadorDeFrotas = 0
-
-const criarNovaFrota = (nomeDaBike: Bicicleta) => {
-    contadorDeFrotas ++
-    console.log(`Existem ${contadorDeFrotas} frotas criadas.`)
-    return new Frota ([nomeDaBike])
-}
-
-const frotaY = criarNovaFrota(bike2)
