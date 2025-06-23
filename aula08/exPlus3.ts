@@ -24,12 +24,9 @@ export class Bicicleta {
 export class Frota {
     private colecaoDeBicicletas: Bicicleta[]
     private static contador = 0
-    private totalDeFrotas: number
 
     constructor (colecaoDeBicicletasConst: Bicicleta[]) {
         this.colecaoDeBicicletas = colecaoDeBicicletasConst
-        Frota.contador ++
-        this.totalDeFrotas = Frota.contador
 
     }
 
@@ -56,12 +53,6 @@ export class Frota {
         console.log(this.colecaoDeBicicletas.length)
     }
 
-    // quantas frotas/estacoes foram criadas... mas eu preciso estar em alguma frota (no objeto frotaB) para daí chamar essa funcao. 
-    mostrarTotalDeFrotasCriadas (): void {
-        console.log(`Total de frotas criadas: ${this.mostrarTotalDeFrotasCriadas}`)
-    }
-
-
 }
 
 
@@ -86,6 +77,16 @@ frotaA.mostrarColecaoBicicletas()
 frotaA.mostrarNumeroBicicletasDaFrota()
 
 
-export class EstacaoBicicleta {
-// estacaoBicicleta é igual a frota, entao resolvi fazer em Frota. 
+
+
+// FUNCAO PARA CRIAR FROTAS E CONTAR TOTAL DE FROTAS // 
+
+let contadorDeFrotas = 0
+
+const criarNovaFrota = (nomeDaBike: Bicicleta) => {
+    contadorDeFrotas ++
+    console.log(`Existem ${contadorDeFrotas} frotas criadas.`)
+    return new Frota ([nomeDaBike])
 }
+
+const frotaY = criarNovaFrota(bike2)
