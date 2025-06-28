@@ -1,3 +1,5 @@
+import { statusCasoPolicial } from "./enum"
+
 export class PolicialCivil {
     private nome: string
     private matricula: number
@@ -80,15 +82,34 @@ export class Viatura extends Veiculo {
 const viaturaA = new Viatura (false, 3333, ['giroflash'], [policial1, policial2, policial3], 6981, 2020, 'azul')
 viaturaA.mostrarViatura()
 
+
+export class Evidencia {
+    private tipoEvidencia: string
+    private localColeta: string
+    private dataColeta: string
+
+    constructor (tipoEvidenciaConst: string, localColetaConst: string, dataColetaConst: string) {
+        this.tipoEvidencia = tipoEvidenciaConst
+        this.localColeta = localColetaConst
+        this.dataColeta = dataColetaConst
+    }
+
+    mostrarEvidencia (): void {
+        console.log(`Evidência do tipo ${this.tipoEvidencia}, coletada em ${this.localColeta} na data de ${this.dataColeta}`)
+    }
+}
+
+
 export class CasoPolicial  {
     private tipo: string // inquérito ou Termo Circunstanciado
     private static contador = 0   // STATIC MOSTRA QUE PERTENCE A CLASSE , e nao aos atributos da instancia (dos objetos)
     private numeroCaso: number
     private tipoPenal: string
     private emAndamento: boolean // em andamento ou concluído
+    private status:statusCasoPolicial
     private evidencia: Array<Evidencia>
 
-    constructor (tipoConst: string, tipoPenalConst: string) {
+    constructor (tipoConst: string, tipoPenalConst: string, statusConst:statusCasoPolicial=1) {//se não definir ou alterar o valor de status const por padrão será 1
         this.tipo = tipoConst
         CasoPolicial.contador++ // AQUI EU SOMO O CONTADOR , para só abaixo eu SOMAR.
         this.numeroCaso = CasoPolicial.contador // se eu somasse aqui o contador, ele somaria no objeto instanciado, e nao é isso que desejamos. 
@@ -96,6 +117,8 @@ export class CasoPolicial  {
         this.emAndamento = true // já instancio o objeto como true, pois estou criando um novo caso, por óbvio ele está aberto. 
         // this.evidencia = evidenciaConst . tinha feito assim, e inserido como parametro do construtor evidenciaConst ?: Array<Evidencia>. depois, instancio como um array vazio.
         this.evidencia = [] 
+        this.status = statusConst;
+        
     }
 
     modificarAndamento (novoAndamento: boolean) : void{
@@ -120,25 +143,8 @@ export class CasoPolicial  {
 const expediente1 = new CasoPolicial ('Inquérito',  'estelionato')
 const expediente2 = new CasoPolicial ('Termo Circunstanciado', 'vias de fato')
 const expediente3 = new CasoPolicial ('Inquérito', 'roubo')
+const expediente4 = new CasoPolicial ('Inquérito', 'estorção', 2)
 expediente1.mostrarCasoPolicial()
-
-
-
-export class Evidencia {
-    private tipoEvidencia: string
-    private localColeta: string
-    private dataColeta: string
-
-    constructor (tipoEvidenciaConst: string, localColetaConst: string, dataColetaConst: string) {
-        this.tipoEvidencia = tipoEvidenciaConst
-        this.localColeta = localColetaConst
-        this.dataColeta = dataColetaConst
-    }
-
-    mostrarEvidencia (): void {
-        console.log(`Evidência do tipo ${this.tipoEvidencia}, coletada em ${this.localColeta} na data de ${this.dataColeta}`)
-    }
-}
 
 const evidenciaA = new Evidencia ('papiloscópica', 'Porto Alegre', '24/07/2025')
 const evidenciaB= new Evidencia ('Corpo de Delito', 'Igrejinha', '03/06/2025')

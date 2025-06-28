@@ -22,11 +22,13 @@ export class Bicicleta {
 }
 
 export class Frota {
-    private colecaoDeBicicletas: Bicicleta[]
+    private name : string;
+    private colecaoDeBicicletas: Bicicleta[] = []
     private static contador = 0
 
-    constructor (colecaoDeBicicletasConst: Bicicleta[]) {
-        this.colecaoDeBicicletas = colecaoDeBicicletasConst
+    constructor (nameConst:string) {
+        this.name = nameConst
+        Frota.contador++;
 
     }
 
@@ -61,7 +63,8 @@ const bike2 = new Bicicleta ('Specialized', 'run', 28, 'cinza', true)
 const bike3 = new Bicicleta ('Orbit', 'great', 26, 'branca', true)
 const bike4 = new Bicicleta ('Specialized', 'Storm', 28, 'cinza', true)
 
-const frotaA = new Frota([bike1])
+const frotaA = new Frota('ZN')
+frotaA.adicionarBicicleta(new Bicicleta('Caloi', 'dez', 28, 'azul', true))
 frotaA.adicionarBicicleta(bike2)
 frotaA.mostrarColecaoBicicletas()
 

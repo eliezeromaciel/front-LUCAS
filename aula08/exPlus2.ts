@@ -52,6 +52,10 @@ export class Via {
         this.graduacao = graduacaoConst
         this.localizacao = localizacaoConst
     }
+
+    descreverVia():string{
+        return;
+    }
 }
 
 export class ViaEsportiva extends Via {
@@ -64,6 +68,9 @@ export class ViaEsportiva extends Via {
 
     exibirViaEsportiva (): void {
         console.log(`A via ${this.nome}, graduada em ${this.graduacao}, localizada em ${this.localizacao} possui ${this.qtdeProtecoes} proteções fixas.`)
+    }
+    descreverVia(): string {
+        return `A via ${this.nome}, graduada em ${this.graduacao}, localizada em ${this.localizacao} possui ${this.qtdeProtecoes} proteções fixas.`
     }
 }
 
@@ -80,6 +87,10 @@ export class ViaTradicional extends Via {
     exibirViaTradicional (): void {
         console.log(`Na via ${this.nome}, que tem ${this.qtdeEnfiadas} enfiadas, graduada em ${this.graduacao}, localizada em ${this.localizacao} é sugerido o uso de  ${this.qtdeEquipamentosMoveis} móveis.`)
 
+    }
+
+    descreverVia(): string {
+        return `Na via ${this.nome}, que tem ${this.qtdeEnfiadas} enfiadas, graduada em ${this.graduacao}, localizada em ${this.localizacao} é sugerido o uso de  ${this.qtdeEquipamentosMoveis} móveis.`
     }
 }
 
